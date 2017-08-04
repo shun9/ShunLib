@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ShunLib">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ShunLib\inc">
+      <UniqueIdentifier>{c34da3a7-9c3c-4127-ba0c-b74e570effa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShunLib\src">
+      <UniqueIdentifier>{b8b2e7a9-ecb9-4892-afcd-4e9bea0cccac}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc\SL_ConstantNumber.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\SL_Conversion.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\SL_MacroConstants.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\SL_Matrix.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\SL_RandomNumber.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\SL_Singleton.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\SL_Vec2.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\SL_Vec3.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\SL_StateMachine.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\SL_State.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\SL_Factory.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\SL_Timer.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\SL_Command.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\SL_CommandInput.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\SL_CompositeVisitor.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\SL_Conversion.cpp">
+      <Filter>ShunLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SL_Matrix.cpp">
+      <Filter>ShunLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SL_RandomNumber.cpp">
+      <Filter>ShunLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SL_Vec2.cpp">
+      <Filter>ShunLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SL_Vec3.cpp">
+      <Filter>ShunLib\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
