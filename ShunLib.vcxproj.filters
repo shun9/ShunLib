@@ -61,6 +61,9 @@
     <ClInclude Include="inc\SL_CompositeVisitor.h">
       <Filter>ShunLib\inc</Filter>
     </ClInclude>
+    <ClInclude Include="inc\SL_Vec4.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\SL_Conversion.cpp">
@@ -76,6 +79,12 @@
       <Filter>ShunLib\src</Filter>
     </ClCompile>
     <ClCompile Include="src\SL_Vec3.cpp">
+      <Filter>ShunLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SL_ConstantNumber.cpp">
+      <Filter>ShunLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SL_Vec4.cpp">
       <Filter>ShunLib\src</Filter>
     </ClCompile>
   </ItemGroup>

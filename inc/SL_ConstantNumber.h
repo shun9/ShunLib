@@ -8,12 +8,21 @@
 
 namespace ShunLib
 {
-	//•ûŒü
-	enum DIRECTION_2D
+	class ConstantNumber
 	{
-		TOP,
-		BOTTOM,
-		RIGHT,
-		LEFT,
+	public:
+		//‰~Žü—¦
+		static const float PI;
+	
+		//•ûŒü
+		enum DIRECTION_2D
+		{
+			TOP,
+			BOTTOM,
+			RIGHT,
+			LEFT,
+			num,
+		};
 	};
+
 }
