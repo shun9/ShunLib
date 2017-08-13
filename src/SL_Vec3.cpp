@@ -175,7 +175,7 @@ Vec3& Vec3::operator/=(float num)
 	return *this;
 }
 
-Vec3 & ShunLib::Vec3::operator+()
+Vec3& ShunLib::Vec3::operator+()
 {
 	return *this;
 }

@@ -29,6 +29,9 @@ namespace ShunLib
 		static Matrix CreateScale(const Vec3& scale);
 		static Matrix CreateScale(float scale);
 
+		//“]’us—ñ‚ğ•Ô‚·
+		static Matrix Transpose(const Matrix& m);
+
 		//Ë‰es—ñ
 		static Matrix CreateProj(float fov,
 								 float aspectRatio,

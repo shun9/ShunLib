@@ -118,6 +118,18 @@ Matrix Matrix::CreateScale(float scale)
 	return matrix;
 }
 
+Matrix ShunLib::Matrix::Transpose(const Matrix & m)
+{
+	Matrix mat;
+
+	mat.m_value[0][0] = m.m_value[0][0];	mat.m_value[1][0] = m.m_value[0][1];	mat.m_value[2][0] = m.m_value[0][2];	mat.m_value[3][0] = m.m_value[0][3];
+	mat.m_value[0][1] = m.m_value[1][0];	mat.m_value[1][1] = m.m_value[1][1];	mat.m_value[2][1] = m.m_value[1][2];	mat.m_value[3][1] = m.m_value[1][3];
+	mat.m_value[0][2] = m.m_value[2][0];	mat.m_value[1][2] = m.m_value[2][1];	mat.m_value[2][2] = m.m_value[2][2];	mat.m_value[3][2] = m.m_value[2][3];
+	mat.m_value[0][3] = m.m_value[3][0];	mat.m_value[1][3] = m.m_value[3][1];	mat.m_value[2][3] = m.m_value[3][2];	mat.m_value[3][3] = m.m_value[3][3];
+
+	return mat;
+}
+
 //＋ーーーーーーーーーーーーーー＋
 //｜機能  :射影行列の作成
 //｜引数  :視野角　　　　　　(float)
@@ -156,6 +168,7 @@ Matrix Matrix::CreateProj(float fov, float aspectRatio, float nearPlane, float f
 //＋ーーーーーーーーーーーーーー＋
 Matrix ShunLib::Matrix::CreateLookAt(const Vec3& eye, const Vec3& target, const Vec3& up)
 {
+	
 	Vec3 x;
 	Vec3 y;
 	Vec3 z = eye - target;
