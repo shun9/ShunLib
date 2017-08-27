@@ -8,9 +8,6 @@
 
 namespace ShunLib
 {
-	//‰~Žü—¦
-	const float PI = 3.14159265359f;
-
 	//Šp“x‚©‚çƒ‰ƒWƒAƒ“‚É•ÏŠ·
 	float ToRadian(float angle);
 

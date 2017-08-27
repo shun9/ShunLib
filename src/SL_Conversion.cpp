@@ -5,6 +5,7 @@
 //* @author:S.Katou
 //************************************************/
 #include "SL_Conversion.h"
+#include <SL_ConstantNumber.h>
 
 //＋ーーーーーーーーーーーーーー＋
 //｜機能  :角度からラジアンに変換
@@ -15,7 +16,7 @@ float ShunLib::ToRadian(float angle)
 {
 	float radian = 0.0f;
 
-	radian = angle * PI / 180.0f;
+	radian = angle * ConstantNumber::PI / 180.0f;
 
 	return radian;
 }
@@ -31,7 +32,8 @@ float ShunLib::ToAngle(float radian)
 {
 	float angle = 0.0f;
 
-	angle = radian * 180.0f / PI;
+	angle = radian * 180.0f / ConstantNumber::PI;
 
 	return angle;
 }
+
