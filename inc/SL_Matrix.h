@@ -32,6 +32,9 @@ namespace ShunLib
 		//“]’us—ñ‚ğ•Ô‚·
 		static Matrix Transpose(const Matrix& m);
 
+		//‹ts—ñ‚ğ•Ô‚·
+		static Matrix Inverse(const Matrix& m);
+
 		//Ë‰es—ñ
 		static Matrix CreateProj(float fov,
 								 float aspectRatio,
@@ -62,4 +65,5 @@ namespace ShunLib
 		Matrix operator*(const Matrix& M);
 		Matrix operator*(int num);
 	};
-}
+}	
+ShunLib::Matrix operator*(const ShunLib::Matrix& M, const ShunLib::Matrix& M2);
