@@ -5,6 +5,7 @@
 //* @author:S.Katou
 //************************************************/
 #pragma once
+#include <string>
 
 namespace ShunLib
 {
@@ -13,4 +14,10 @@ namespace ShunLib
 
 	//ラジアンから角度に変換
 	float ToAngle(float radian);
+
+	//ワイド文字列からマルチバイト文字列
+	void ToNarrow(const std::wstring &src, std::string &dest);
+
+	//マルチバイト文字列からワイド文字列
+	void ToWiden(const std::string &src, std::wstring &dest);
 }

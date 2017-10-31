@@ -34,7 +34,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -144,6 +144,7 @@
     <ClInclude Include="inc\SL_Conversion.h" />
     <ClInclude Include="inc\SL_Factory.h" />
     <ClInclude Include="inc\SL_MacroConstants.h" />
+    <ClInclude Include="inc\SL_Math.h" />
     <ClInclude Include="inc\SL_Matrix.h" />
     <ClInclude Include="inc\SL_RandomNumber.h" />
     <ClInclude Include="inc\SL_Singleton.h" />

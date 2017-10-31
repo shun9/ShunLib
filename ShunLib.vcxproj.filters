@@ -64,6 +64,9 @@
     <ClInclude Include="inc\SL_Vec4.h">
       <Filter>ShunLib\inc</Filter>
     </ClInclude>
+    <ClInclude Include="inc\SL_Math.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\SL_Conversion.cpp">

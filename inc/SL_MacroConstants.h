@@ -5,17 +5,18 @@
 //* @author:S.Katou
 //************************************************/
 #pragma once
+	
+//ポインター消去用
+#define DELETE_POINTER(p)    if (p!=nullptr){delete p; p = nullptr;}
+#define DELETE_ARRAY(p)      if (p!=nullptr){delete[] p; p = nullptr;}
 
-namespace ShunLib
-{
-	//ポインター消去用
-#define DELETE_POINTER(p) if (p!=nullptr){delete p; p = nullptr;}
-#define DELETE_ARRAY(p) if (p!=nullptr){delete[] p; p = nullptr;}
-
-#define SAFE_DELETE(p) if (p!=nullptr){delete p; p = nullptr;}
+#define SAFE_DELETE(p)       if (p!=nullptr){delete p; p = nullptr;}
 #define SAFE_DELETE_ARRAY(p) if (p!=nullptr){delete[] p; p = nullptr;}
-#define SAFE_RELEASE(x) if (x!=NULL){x->Release(); x = NULL;}
+#define SAFE_RELEASE(x)      if (x!=nullptr){x->Release(); x = nullptr;}
+
+//配列やコンテナに入っているポインタを削除
+#define SAFE_DELETE_INSIDE(c) 	for (auto& v:m_objList){ SAFE_DELETE(v);}
+
 
 #define MIN(a,b) (((a) < (b)) ? (a) : (b))
 #define MAX(a,b) (((a) > (b)) ? (a) : (b))
-}

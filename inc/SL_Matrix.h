@@ -64,6 +64,13 @@ namespace ShunLib
 		Matrix operator-(const Matrix& M);
 		Matrix operator*(const Matrix& M);
 		Matrix operator*(int num);
+
+		/*--[演算子のオーバーロード]--*/
+		Matrix operator+=(const Matrix& M);
+		Matrix operator-=(const Matrix& M);
+		Matrix operator*=(const Matrix& M);
+		Matrix operator*=(int num);
 	};
 }	
+
 ShunLib::Matrix operator*(const ShunLib::Matrix& M, const ShunLib::Matrix& M2);

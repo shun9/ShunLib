@@ -37,3 +37,25 @@ float ShunLib::ToAngle(float radian)
 	return angle;
 }
 
+
+//ワイド文字列からマルチバイト文字列
+//ロケール依存
+void ShunLib::ToNarrow(const std::wstring &src, std::string &dest) {
+	size_t size = src.length() * MB_CUR_MAX + 1;
+	char *mbs = new char[size];
+	size_t tmp = 0;
+	wcstombs_s(&tmp, mbs, size, src.c_str(), size);
+	dest = mbs;
+	delete[] mbs;
+}
+
+//マルチバイト文字列からワイド文字列
+//ロケール依存
+void ShunLib::ToWiden(const std::string &src, std::wstring &dest) {
+	size_t size = src.length()+1;
+	wchar_t *wcs = new wchar_t[size];
+	size_t tmp = 0;
+	mbstowcs_s(&tmp, wcs, size,src.c_str(),size);
+	dest = wcs;
+	delete[] wcs;
+}

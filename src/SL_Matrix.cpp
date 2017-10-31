@@ -391,6 +391,30 @@ Matrix Matrix::operator*(int num)
 	return m;
 }
 
+Matrix ShunLib::Matrix::operator+=(const Matrix & M)
+{
+	(*this) = (*this) + M;
+	return (*this);
+}
+
+Matrix ShunLib::Matrix::operator-=(const Matrix & M)
+{
+	(*this) = (*this) - M;
+	return (*this);
+}
+
+Matrix ShunLib::Matrix::operator*=(const Matrix & M)
+{
+	(*this) = (*this) * M;
+	return (*this);
+}
+
+Matrix ShunLib::Matrix::operator*=(int num)
+{
+	(*this) = (*this) * num;
+	return (*this);
+}
+
 Matrix operator*(const Matrix & M, const Matrix & M2)
 {
 	Matrix m;
