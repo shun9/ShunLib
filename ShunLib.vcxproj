@@ -83,6 +83,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -139,10 +140,11 @@
   <ItemGroup>
     <ClInclude Include="inc\SL_Command.h" />
     <ClInclude Include="inc\SL_CommandInput.h" />
-    <ClInclude Include="inc\SL_CompositeVisitor.h" />
+    <ClInclude Include="inc\SL_Visitor.h" />
     <ClInclude Include="inc\SL_ConstantNumber.h" />
     <ClInclude Include="inc\SL_Conversion.h" />
     <ClInclude Include="inc\SL_Factory.h" />
+    <ClInclude Include="inc\SL_Lerp.h" />
     <ClInclude Include="inc\SL_MacroConstants.h" />
     <ClInclude Include="inc\SL_Math.h" />
     <ClInclude Include="inc\SL_Matrix.h" />

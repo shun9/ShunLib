@@ -15,7 +15,7 @@
 #define SAFE_RELEASE(x)      if (x!=nullptr){x->Release(); x = nullptr;}
 
 //配列やコンテナに入っているポインタを削除
-#define SAFE_DELETE_INSIDE(c) 	for (auto& v:m_objList){ SAFE_DELETE(v);}
+#define SAFE_DELETE_INSIDE(c) 	for (auto& v : c){ SAFE_DELETE(v);}
 
 
 #define MIN(a,b) (((a) < (b)) ? (a) : (b))

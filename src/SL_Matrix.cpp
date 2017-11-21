@@ -118,6 +118,9 @@ Matrix Matrix::CreateScale(float scale)
 	return matrix;
 }
 
+/// <summary>
+/// “]’us—ñ‚ğ•Ô‚·
+/// </summary>
 Matrix ShunLib::Matrix::Transpose(const Matrix & m)
 {
 	Matrix mat;
@@ -130,6 +133,9 @@ Matrix ShunLib::Matrix::Transpose(const Matrix & m)
 	return mat;
 }
 
+/// <summary>
+/// ‹ts—ñ‚ğ•Ô‚·
+/// </summary>
 Matrix ShunLib::Matrix::Inverse(const Matrix & m)
 {
 	Matrix mat = m;

@@ -58,13 +58,16 @@
     <ClInclude Include="inc\SL_CommandInput.h">
       <Filter>ShunLib\inc</Filter>
     </ClInclude>
-    <ClInclude Include="inc\SL_CompositeVisitor.h">
-      <Filter>ShunLib\inc</Filter>
-    </ClInclude>
     <ClInclude Include="inc\SL_Vec4.h">
       <Filter>ShunLib\inc</Filter>
     </ClInclude>
     <ClInclude Include="inc\SL_Math.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\SL_Lerp.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\SL_Visitor.h">
       <Filter>ShunLib\inc</Filter>
     </ClInclude>
   </ItemGroup>
