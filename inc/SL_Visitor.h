@@ -6,19 +6,22 @@
 //************************************************/
 #pragma once
 
-class INode;
-
-class Visitor {
-public:
-	virtual void Visit(INode* pNode) = 0;
-};
-
-class VisitorNode
+namespace ShunLib
 {
-public:
-	VisitorNode() {}
-	virtual ~VisitorNode() {}
+	class VisitorNode;
 
-	// ビジターを迎え入れる
-	virtual void Accept(Visitor* visitor) = 0;
-};
+	class Visitor {
+	public:
+		virtual void Visit(VisitorNode* node) = 0;
+	};
+
+	class VisitorNode
+	{
+	public:
+		VisitorNode() {}
+		virtual ~VisitorNode() {}
+
+		// ビジターを迎え入れる
+		virtual void Accept(Visitor* visitor) = 0;
+	};
+}
