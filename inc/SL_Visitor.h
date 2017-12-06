@@ -13,6 +13,12 @@ namespace ShunLib
 	class Visitor {
 	public:
 		virtual void Visit(VisitorNode* node) = 0;
+
+		// ビジターを迎え入れる
+		virtual void Accept(Visitor* visitor) = 0;
+
+		//ビジターを初期化
+		virtual void Reset() = 0;
 	};
 
 	class VisitorNode

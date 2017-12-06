@@ -5,6 +5,7 @@
 //* @author:S.Katou
 //************************************************/
 #pragma once
+#include <functional>
 
 namespace ShunLib
 {
