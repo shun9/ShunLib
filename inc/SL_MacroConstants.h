@@ -16,7 +16,3 @@
 
 //配列やコンテナに入っているポインタを削除
 #define SAFE_DELETE_INSIDE(c) 	for (auto& v : c){ SAFE_DELETE(v);}
-
-
-#define MIN(a,b) (((a) < (b)) ? (a) : (b))
-#define MAX(a,b) (((a) > (b)) ? (a) : (b))

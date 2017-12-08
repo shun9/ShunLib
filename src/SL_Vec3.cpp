@@ -7,8 +7,7 @@
 #include "SL_Vec3.h"
 
 #include <cmath>
-#include <SL_Matrix.h>
-#include <SL_MacroConstants.h>
+#include <SL_Math.h>
 
 using namespace ShunLib;
 
@@ -73,7 +72,7 @@ Vec3 Vec3::Cross(const Vec3 & V, const Vec3 & V2)
 Vec3 ShunLib::Vec3::Larp(const Vec3 & start, const Vec3 & end, float time, std::function<float(float)> v)
 {
 	//ŠÔ‚ğ0.0`1.0‚ÌŠÔ‚Éû‚ß‚é
-	float t = MIN(MAX(time, 0.0f), 1.0f);
+	float t =  ShunLib::Clamp(1.0f,0.0f,time);
 
 	Vec3 pos;
 
