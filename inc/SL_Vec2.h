@@ -21,6 +21,13 @@ namespace ShunLib
 		static const Vec2 UnitY; //(0,1)
 
 	public:
+		//内積
+		static float Dot(const Vec2& V, const Vec2& V2);
+
+		//2つのベクトルのなす角を返す
+		static float Degree(const Vec2& V, const Vec2& V2);
+
+	public:
 		float m_x;
 		float m_y;
 
@@ -28,6 +35,9 @@ namespace ShunLib
 		Vec2();
 		Vec2(float x, float y);
 		~Vec2();
+
+		//ベクトルの長さ
+		float Length()const;
 
 		/*--[演算子のオーバーロード]--*/
 		Vec2& operator=(const Vec2& V);
@@ -37,4 +47,6 @@ namespace ShunLib
 		Vec2 operator* (float num    );
 		Vec2 operator* (double num   );
 	};
+
+	bool  operator==(const ShunLib::Vec2& V, const ShunLib::Vec2& V2);
 }

@@ -10,6 +10,7 @@ namespace ShunLib
 {
 	class VisitorNode;
 
+	//–K–âŽÒ
 	class Visitor {
 	public:
 		virtual void Visit(VisitorNode* node) = 0;
@@ -21,6 +22,7 @@ namespace ShunLib
 		virtual void Reset() = 0;
 	};
 
+	//–K–â‚³‚ê‚é‘¤
 	class VisitorNode
 	{
 	public:
