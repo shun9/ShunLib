@@ -43,6 +43,11 @@ namespace ShunLib
 		//回転
 		static Vec3 Rotation(const Vec3& V, const Matrix& rot);
 
+		//2つのベクトルのなす角を返す
+		static float Vec3::Degree(const Vec3 & V, const Vec3 & V2);
+		
+		//2つのベクトルの軸ごとのなす角を返す
+		static Vec3 Vec3::DegreeEachAxis(const Vec3 & V, const Vec3 & V2);
 	public:
 		float m_x;
 		float m_y;
@@ -59,7 +64,7 @@ namespace ShunLib
 		Vec3 Normalize();
 
 		//大きさを返す
-		float Length();
+		float Length()const;
 
 		/*--[演算子のオーバーロード]--*/
 		Vec3& operator= (const Vec3& V);

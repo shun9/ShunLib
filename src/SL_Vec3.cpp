@@ -8,6 +8,7 @@
 
 #include <cmath>
 #include <SL_Math.h>
+#include <SL_Conversion.h>
 
 using namespace ShunLib;
 
@@ -27,7 +28,7 @@ const Vec3 Vec3::Backward = Vec3( 0,  0,  1);
 /// <summary>
 /// 正規化したベクトルを返す
 /// </summary>
-Vec3 ShunLib::Vec3::Normalize(const Vec3 & V)
+Vec3 Vec3::Normalize(const Vec3 & V)
 {
 	Vec3 v = V;
 	float length = std::sqrt(v.m_x * v.m_x + v.m_y * v.m_y + v.m_z * v.m_z);
@@ -42,7 +43,7 @@ Vec3 ShunLib::Vec3::Normalize(const Vec3 & V)
 /// <summary>
 /// 内積を返す
 /// </summary>
-float ShunLib::Vec3::Dot(const Vec3 & V, const Vec3 & V2)
+float Vec3::Dot(const Vec3 & V, const Vec3 & V2)
 {
 	float dot = (V.m_x*V2.m_x)
 			  + (V.m_y*V2.m_y)
@@ -69,7 +70,7 @@ Vec3 Vec3::Cross(const Vec3 & V, const Vec3 & V2)
 /// </summary>
 /// <param name="time">現在の時間</param>
 /// <param name="v">補間関数</param>
-Vec3 ShunLib::Vec3::Larp(const Vec3 & start, const Vec3 & end, float time, std::function<float(float)> v)
+Vec3 Vec3::Larp(const Vec3 & start, const Vec3 & end, float time, std::function<float(float)> v)
 {
 	//時間を0.0～1.0の間に収める
 	float t =  ShunLib::Clamp(1.0f,0.0f,time);
@@ -81,7 +82,12 @@ Vec3 ShunLib::Vec3::Larp(const Vec3 & start, const Vec3 & end, float time, std::
 	return pos;
 }
 
-Vec3 ShunLib::Vec3::Rotation(const Vec3 & V, const Matrix & rot)
+/// <summary>
+/// ベクトルを回転させる
+/// </summary>
+/// <param name="V">ベクトル</param>
+/// <param name="rot">回転行列</param>
+Vec3 Vec3::Rotation(const Vec3 & V, const Matrix & rot)
 {
 	Vec3 vec;
 	vec.m_x = (rot.m_value[0][0] * V.m_x) + (rot.m_value[0][1] * V.m_y) + (rot.m_value[0][2] * V.m_z);
@@ -89,6 +95,48 @@ Vec3 ShunLib::Vec3::Rotation(const Vec3 & V, const Matrix & rot)
 	vec.m_z = (rot.m_value[2][0] * V.m_x) + (rot.m_value[2][1] * V.m_y) + (rot.m_value[2][2] * V.m_z);
 	return vec;
 }
+
+/// <summary>
+/// 2つのベクトルのなす角を返す
+/// </summary>
+float Vec3::Degree(const Vec3 & V, const Vec3 & V2)
+{
+	if ((V.m_x  == 0.0f && V.m_y  == 0.0f)
+	  ||(V2.m_x == 0.0f && V2.m_y == 0.0f)) { return 0.0f; }
+
+	float cos = Dot(V, V2) / (V.Length()*V2.Length());
+
+	return ToAngle(std::acos(cos));
+}
+
+
+/// /// <summary>
+/// 2つのベクトルの軸ごとのなす角を返す
+/// </summary>
+Vec3 ShunLib::Vec3::DegreeEachAxis(const Vec3 & V, const Vec3 & V2)
+{
+	Vec3 angle;
+	Vec2 v1;
+	Vec2 v2;
+
+	//X軸の角度
+	v1.m_x = V.m_y; v1.m_y = V.m_z;
+	v2.m_x = V2.m_y; v2.m_y = V2.m_z;
+	angle.m_x = Vec2::Degree(v1,v2);
+
+	//Y軸の角度
+	v1.m_x = V.m_x; v1.m_y = V.m_z;
+	v2.m_x = V2.m_x; v2.m_y = V2.m_z;
+	angle.m_y = Vec2::Degree(v1, v2);
+
+	//Z軸の角度
+	v1.m_x = V.m_x; v1.m_y = V.m_y;
+	v2.m_x = V2.m_x; v2.m_y = V2.m_y;
+	angle.m_z = Vec2::Degree(v1, v2);
+
+	return angle;
+}
+
 
 //＋ーーーーーーーーーーーーーー＋
 //｜機能  :デフォルトコンストラクタ
@@ -165,7 +213,7 @@ Vec3 Vec3::Normalize()
 /// ベクトルの大きさを返す
 /// </summary>
 /// <returns>ベクトルの大きさ</returns>
-float ShunLib::Vec3::Length()
+float Vec3::Length()const
 {
 	float lenght = std::sqrt(m_x*m_x + m_y*m_y + m_z*m_z);
 	return lenght;
@@ -201,7 +249,7 @@ Vec3& Vec3::operator-=(const Vec3& V)
 	return *this;
 }
 
-Vec3 & ShunLib::Vec3::operator*=(double num)
+Vec3& Vec3::operator*=(double num)
 {
 	this->m_x *= (float)num;
 	this->m_y *= (float)num;
@@ -209,7 +257,7 @@ Vec3 & ShunLib::Vec3::operator*=(double num)
 	return *this;
 }
 
-Vec3 & ShunLib::Vec3::operator/=(double num)
+Vec3& Vec3::operator/=(double num)
 {
 	this->m_x /= (float)num;
 	this->m_y /= (float)num;
@@ -233,7 +281,7 @@ Vec3& Vec3::operator/=(float num)
 	return *this;
 }
 
-Vec3 & ShunLib::Vec3::operator*=(int num)
+Vec3 & Vec3::operator*=(int num)
 {
 	this->m_x *= (float)num;
 	this->m_y *= (float)num;
@@ -241,7 +289,7 @@ Vec3 & ShunLib::Vec3::operator*=(int num)
 	return *this;
 }
 
-Vec3 & ShunLib::Vec3::operator/=(int num)
+Vec3 & Vec3::operator/=(int num)
 {
 	this->m_x /= (float)num;
 	this->m_y /= (float)num;
@@ -249,12 +297,12 @@ Vec3 & ShunLib::Vec3::operator/=(int num)
 	return *this;
 }
 
-Vec3& ShunLib::Vec3::operator+()
+Vec3& Vec3::operator+()
 {
 	return *this;
 }
 
-Vec3 ShunLib::Vec3::operator-()
+Vec3 Vec3::operator-()
 {
 	Vec3 vec;
 
@@ -265,7 +313,7 @@ Vec3 ShunLib::Vec3::operator-()
 }
 
 
-bool  operator==(const ShunLib::Vec3& V, const ShunLib::Vec3& V2)
+bool  operator==(const Vec3& V, const Vec3& V2)
 {
 	return (V.m_x == V2.m_x
 		&&V.m_y == V2.m_y
@@ -291,7 +339,7 @@ Vec3 operator-(const Vec3 & V, const Vec3 & V2)
 }
 
 
-ShunLib::Vec3 operator*(const ShunLib::Vec3 & V, double num)
+Vec3 operator*(const Vec3 & V, double num)
 {
 	Vec3 vec;
 	vec.m_x = V.m_x * (float)num;
@@ -309,7 +357,7 @@ Vec3 operator*(const Vec3 & V, float num)
 	return vec;
 }
 
-ShunLib::Vec3 operator*(const ShunLib::Vec3 & V, int num)
+Vec3 operator*(const Vec3 & V, int num)
 {
 	Vec3 vec;
 	vec.m_x = V.m_x * (float)num;
@@ -318,7 +366,7 @@ ShunLib::Vec3 operator*(const ShunLib::Vec3 & V, int num)
 	return vec;
 }
 
-ShunLib::Vec3 operator/(const ShunLib::Vec3 & V, double num)
+Vec3 operator/(const Vec3 & V, double num)
 {
 	Vec3 vec;
 	vec.m_x = V.m_x / (float)num;
@@ -337,7 +385,7 @@ Vec3 operator/(const Vec3 & V, float num)
 	return vec;
 }
 
-ShunLib::Vec3 operator/(const ShunLib::Vec3 & V, int num)
+Vec3 operator/(const Vec3 & V, int num)
 {
 	Vec3 vec;
 	vec.m_x = V.m_x / (float)num;
