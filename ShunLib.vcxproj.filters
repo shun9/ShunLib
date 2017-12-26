@@ -70,6 +70,9 @@
     <ClInclude Include="inc\SL_Visitor.h">
       <Filter>ShunLib\inc</Filter>
     </ClInclude>
+    <ClInclude Include="inc\SL_SingletonDestroyer.h">
+      <Filter>ShunLib\inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\SL_Conversion.cpp">
@@ -91,6 +94,9 @@
       <Filter>ShunLib\src</Filter>
     </ClCompile>
     <ClCompile Include="src\SL_Vec4.cpp">
+      <Filter>ShunLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SL_SingletonDestroyer.cpp">
       <Filter>ShunLib\src</Filter>
     </ClCompile>
   </ItemGroup>

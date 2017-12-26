@@ -6,11 +6,30 @@
 //************************************************/
 #pragma once
 #include <SL_MacroConstants.h>
+#include <SL_SingletonDestroyer.h>
 
 namespace ShunLib
 {
+	class ISingleton
+	{
+	public:
+		//実体削除
+		virtual void DestroyInstance() = 0;
+
+	protected:
+		//派生クラス以外から作成できないようにする
+		ISingleton() { SingletonDestroyer::AddSingleton(this); }
+		virtual ~ISingleton() {}
+
+		//コピーできないように
+		ISingleton(const ISingleton& single) = delete;
+
+		//代入できないように
+		const ISingleton& operator = (const ISingleton& single) = delete;
+	};
+
 	template<class T>
-	class Singleton
+	class Singleton : public ISingleton
 	{
 	private:
 		//実体
@@ -37,18 +56,16 @@ namespace ShunLib
 			DELETE_POINTER(m_instance);
 		}
 
+	public:
+		//実体削除
+		virtual void DestroyInstance() {
+			DELETE_POINTER(m_instance);
+		}
 
 	protected:
 		//派生クラス以外から作成できないようにする
 		Singleton() {}
 		virtual ~Singleton() {}
-
-	private:
-		//コピーできないように
-		Singleton(const Singleton& single);
-
-		//代入できないように
-		const Singleton& operator = (const Singleton& single) {};
 	};
 
 	template<class T>

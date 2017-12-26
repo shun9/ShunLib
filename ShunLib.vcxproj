@@ -28,7 +28,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClInclude Include="inc\SL_Command.h" />
     <ClInclude Include="inc\SL_CommandInput.h" />
+    <ClInclude Include="inc\SL_SingletonDestroyer.h" />
     <ClInclude Include="inc\SL_Visitor.h" />
     <ClInclude Include="inc\SL_ConstantNumber.h" />
     <ClInclude Include="inc\SL_Conversion.h" />
@@ -162,6 +163,7 @@
     <ClCompile Include="src\SL_Conversion.cpp" />
     <ClCompile Include="src\SL_Matrix.cpp" />
     <ClCompile Include="src\SL_RandomNumber.cpp" />
+    <ClCompile Include="src\SL_SingletonDestroyer.cpp" />
     <ClCompile Include="src\SL_Vec2.cpp" />
     <ClCompile Include="src\SL_Vec3.cpp" />
     <ClCompile Include="src\SL_Vec4.cpp" />
