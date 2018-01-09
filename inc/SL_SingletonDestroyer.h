@@ -20,6 +20,9 @@ namespace ShunLib {
 		//シングルトンの追加
 		static void AddSingleton(ISingleton* s);
 
+		//シングルトンを除外
+		static void RemoveSingleton(ISingleton* s);
+
 		//シングルトンの削除
 		static void DestoroySingleton();
 

@@ -53,6 +53,7 @@ namespace ShunLib
 		/// ŽÀ‘Ì‚Ì”jŠü
 		/// </summary>
 		static void Destroy() {
+			SingletonDestroyer::RemoveSingleton(m_instance);
 			DELETE_POINTER(m_instance);
 		}
 

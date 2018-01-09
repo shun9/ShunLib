@@ -6,6 +6,7 @@
 //************************************************/
 #include <SL_SingletonDestroyer.h>
 #include <SL_Singleton.h>
+#include <algorithm>
 
 using namespace ShunLib;
 
@@ -27,13 +28,26 @@ void SingletonDestroyer::AddSingleton(ISingleton * s)
 }
 
 /// <summary>
+/// シングルトンを除外
+/// </summary>
+void ShunLib::SingletonDestroyer::RemoveSingleton(ISingleton * s)
+{
+	auto singleton = std::find(m_singletonList.begin(), m_singletonList.end(), s);
+
+	if (singleton != m_singletonList.end()){
+		m_singletonList.erase(singleton);
+	}
+}
+
+/// <summary>
 /// シングルトンの削除
 /// </summary>
 void SingletonDestroyer::DestoroySingleton()
 {
 	//削除
-	for (ISingleton*s : m_singletonList) {
-		s->DestroyInstance();
+	for (int i = 0; i < (int)m_singletonList.size(); i++)
+	{
+		m_singletonList[i]->DestroyInstance();
 	}
 
 	//リストをクリア
